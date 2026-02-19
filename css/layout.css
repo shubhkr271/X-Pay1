@@ -1,0 +1,57 @@
+.site-header {
+  background: black;
+  color: white;
+  padding: 1rem;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main-nav ul {
+  display: none;
+  list-style: none;
+  gap: 1rem;
+}
+
+.hero {
+  position: relative;
+}
+
+.hero img {
+  width: 100%;
+  height: auto;
+}
+
+.hero-overlay {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: white;
+}
+
+.media-section {
+  padding: 2rem 1rem;
+}
+
+.media-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.media-card img {
+  width: 100%;
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .main-nav ul {
+    display: flex;
+  }
+
+  .media-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
