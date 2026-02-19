@@ -1,15 +1,28 @@
-const ageModal = document.getElementById("ageModal");
-const enterBtn = document.getElementById("enterBtn");
-const exitBtn = document.getElementById("exitBtn");
-const siteWrapper = document.getElementById("siteWrapper");
+document.addEventListener("DOMContentLoaded", () => {
 
-document.body.style.overflow = "hidden";
+  const ageModal = document.getElementById("ageModal");
+  const enterBtn = document.getElementById("enterBtn");
+  const exitBtn = document.getElementById("exitBtn");
+  const siteWrapper = document.getElementById("siteWrapper");
 
-enterBtn.addEventListener("click", () => {
-  ageModal.classList.add("hidden");
-  document.body.style.overflow = "auto";
-});
+  // Activate modal state
+  document.body.classList.add("lock-scroll");
+  siteWrapper.classList.add("blurred");
 
-exitBtn.addEventListener("click", () => {
-  window.location.href = "https://www.google.com";
+  // Enter site
+  enterBtn.addEventListener("click", () => {
+    ageModal.classList.add("fade-out");
+
+    setTimeout(() => {
+      ageModal.style.display = "none";
+      document.body.classList.remove("lock-scroll");
+      siteWrapper.classList.remove("blurred");
+    }, 400);
+  });
+
+  // Exit site
+  exitBtn.addEventListener("click", () => {
+    window.location.href = "https://www.google.com";
+  });
+
 });
